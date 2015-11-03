@@ -10,6 +10,7 @@
       <th>Endereco</th>
       <th>Data</th>
       <th>Imagem</th>
+      <th>Usuário</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -22,9 +23,12 @@
         <td><%= event.endereco %></td>
         <td><%= event.data %></td>
         <td><%= event.imagem %></td>
+        <td><%= event.user.email %></td>
         <td><%= link_to 'Show', event %></td>
+        <% if event.user == current_user %>
         <td><%= link_to 'Edit', edit_event_path(event) %></td>
         <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

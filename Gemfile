@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'devise', '~> 3.5', '>= 3.5.2'
+
 ruby '2.2.3'
 
 gem 'rails_12factor'
