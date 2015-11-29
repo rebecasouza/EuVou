@@ -1,9 +1,10 @@
 source 'https://rubygems.org'
 
-gem 'devise', '~> 3.5', '>= 3.5.2'
-
 ruby '2.2.3'
 
+gem 'devise'
+gem 'rolify'
+gem 'authority'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
@@ -29,7 +30,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'omniauth-twitter'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-foursquare'
+
 # Use Unicorn as the app server
 gem 'unicorn'
 
@@ -51,6 +57,7 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
+  gem 'letter_opener'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'

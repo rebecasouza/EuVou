@@ -2,6 +2,8 @@ Rails.application.configure do
   #Devise configuration
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   
+  config.i18n.available_locales = [:'pt-BR', :en]
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
@@ -41,4 +43,14 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  # Don't care if the mailer can't send
+  config.action_mailer.raise_delivery_errors = true
+  
+  # Email
+  config.action_mailer.delivery_method = :letter_opener
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  
+  # Specify what domain to use for mailer URLs
 end
