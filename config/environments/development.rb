@@ -2,8 +2,6 @@ Rails.application.configure do
   #Devise configuration
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   
-  config.i18n.available_locales = [:'pt-BR', :en]
-
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
