@@ -29,9 +29,14 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+gem 'omniauth'
+gem 'omniauth-facebook'
 # Use Unicorn as the app server
 gem 'unicorn'
+
+gem 'rails-i18n', '~> 4.0.0'
+
+gem 'friendly_id', '~> 5.1.0'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -41,6 +46,7 @@ group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'
   gem 'cucumber'
+  gem 'factory_girl_rails'
 end
 
 group :development do
