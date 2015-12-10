@@ -29,8 +29,15 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+gem 'rolify'
+gem 'authority'
+
+# Omniauth for devise
 gem 'omniauth'
+gem 'omniauth-twitter'
 gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-foursquare'
 # Use Unicorn as the app server
 gem 'unicorn'
 
