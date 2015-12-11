@@ -1,3 +1,4 @@
 #Ignorar arquivos de Cache do servidor#
 *.cache
 log/development.log
+log/*.log
