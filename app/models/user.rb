@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
   has_many :identities, dependent: :destroy
+	has_many :events
 
   after_create :set_default_role, if: Proc.new { User.count > 1 }
 
