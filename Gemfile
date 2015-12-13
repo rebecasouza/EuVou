@@ -38,6 +38,9 @@ gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-foursquare'
+
+# Share on social media
+gem 'social-share-button'
 # Use Unicorn as the app server
 gem 'unicorn'
 
