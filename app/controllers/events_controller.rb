@@ -1,11 +1,12 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:index, :show, :new]
+  before_action :authenticate_user!, except: [:index, :show]
 
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all
+		# Mostra os eventos recentes
+		@events = Event.order(created_at: :desc)
   end
 
   # GET /events/1
@@ -20,13 +21,16 @@ class EventsController < ApplicationController
 
   # GET /events/1/edit
   def edit
+		authorize_action_for @event
   end
 
   # POST /events
   # POST /events.json
   def create
-    @event = current_user.events.build(event_params)
-
+    #@event = current_user.events.build(event_params)
+		@event = Event.new(event_params)
+		@event.user = current_user
+		
     respond_to do |format|
       if @event.save
         format.html { redirect_to @event, notice: 'Event was successfully created.' }
@@ -41,6 +45,7 @@ class EventsController < ApplicationController
   # PATCH/PUT /events/1
   # PATCH/PUT /events/1.json
   def update
+		authorize_action_for_ @event
     respond_to do |format|
       if @event.update(event_params)
         format.html { redirect_to @event, notice: 'Event was successfully updated.' }
@@ -55,6 +60,7 @@ class EventsController < ApplicationController
   # DELETE /events/1
   # DELETE /events/1.json
   def destroy
+		authorize_action_for @event
     @event.destroy
     respond_to do |format|
       format.html { redirect_to events_url, notice: 'Event was successfully destroyed.' }
