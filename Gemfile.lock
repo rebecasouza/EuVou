@@ -90,6 +90,10 @@ GEM
     json (1.8.3)
     jwt (1.5.2)
     kgio (2.10.0)
+    launchy (2.4.3)
+      addressable (~> 2.3)
+    letter_opener (1.4.1)
+      launchy (~> 2.2)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
@@ -240,6 +244,7 @@ DEPENDENCIES
   devise (~> 3.5, >= 3.5.2)
   jbuilder (~> 2.0)
   jquery-rails
+  letter_opener
   omniauth
   omniauth-facebook
   omniauth-foursquare
