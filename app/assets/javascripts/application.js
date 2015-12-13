@@ -15,14 +15,3 @@
 //= require social-share-button
 //= require turbolinks
 //= require_tree .
-
-
-
-git add app/assets/javascripts/application.js
-git add app/assets/stylesheets/application.css
-git add 
-git add 	app/assets/stylesheets/application.css.scss
-git add 	config/initializers/social_share_button.rb
-git add 	config/locales/social_share_button.en.yml
-git add 	config/locales/social_share_button.zh-CN.yml
-git add 	config/locales/social_share_button.zh-TW.yml 
