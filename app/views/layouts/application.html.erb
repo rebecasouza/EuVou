@@ -9,37 +9,25 @@
 <body>
   <!-- Sign in with Facebook -->
 
-  <% if current_user %>
+	<% if user_signed_in? %>
     Signed in as <strong><%= current_user.name %></strong>!
-    <%= link_to "Sign out", signout_path, id: "sign_out" %>
+    <%= link_to "Sair", destroy_user_session_path, method: :delete, data: {confirm: "Tem certeza de que deseja sair?" }%>
   <% else %>
-    <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+   	<%= link_to "Entrar", new_user_session_path %>
+    <%= link_to "Facebook", user_omniauth_authorize_path(:facebook) %>
+    <%= link_to "Twitter", user_omniauth_authorize_path(:twitter) %>
+		<%#= link_to "Google", user_omniauth_authorize_path(:google_oauth2) %> 
+		<%#= link_to "Foursquare", user_omniauth_authorize_path(:foursquares) %>
   <% end %>
+	<%= link_to "Criar Conta", new_user_registration_path %>
   
 <div id="status">
 </div>
 
+
 <!--Fim Facebook SDK configuration -->
 
 	   <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
-
-<% if user_signed_in? %>
-  <li>
-  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
-  </li>
-<% else %>
-  <li>
-  <%= link_to('Login', new_user_session_path)  %>  
-  </li>
-<% end %>
-
-
-
-<%= link_to "Sing Up", new_user_registration_path %>
-
-
-
 
 <%= yield %>
 
