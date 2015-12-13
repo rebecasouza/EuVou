@@ -5,8 +5,8 @@ class UsersController < ApplicationController
     if request.patch? && params[:user] #&& params[:user][:email]
       if current_user.update(user_params)
         current_user.skip_reconfirmation!
-        sign_in(current_user, :bypass => true)
-				redirect_to current_user, notice: 'Dados atualizados com sucesso!'
+        sign_in(current_user, bypass: true)
+				redirect_to root_path, notice: 'Dados atualizados com sucesso!'
       else
         @show_errors = true
       end
@@ -19,7 +19,7 @@ private
   end
 
   def user_params
-		accessible = [ :name, :email ] # Adicionar quanto quiser
+		accessible = [ :name, :email ] # Adicionar outros parâmetros
     accessible << [ :password, :password_confirmation ] unless params[:user][:password].blank?
     params.require(:user).permit(accessible)
   end
