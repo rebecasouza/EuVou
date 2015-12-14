@@ -25,5 +25,11 @@
   <%= @event.imagem %>
 </p>
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
+<p>
+	<strong>Compartilhar</strong>
+	<%= social_share_button_tag(@event.titulo, :popup => "true") %>
+</p>
+<% if @event.user == current_user %>
+	<%= link_to 'Editar', edit_event_path(@event) %> |
+<% end %>
 <%= link_to 'Back', events_path %>
