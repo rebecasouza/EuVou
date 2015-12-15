@@ -2,3 +2,4 @@
 *.cache
 log/development.log
 log/*.log
+tmp/*
