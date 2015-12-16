@@ -44,6 +44,9 @@ gem 'social-share-button'
 # Use Unicorn as the app server
 gem 'unicorn'
 
+# File uploader (images)
+gem 'carrierwave'
+gem 'rmagick'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
