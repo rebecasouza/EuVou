@@ -19,15 +19,15 @@
     <% @events.each do |event| %>
       <tr>
         <td><%= event.titulo %></td>
-        <td><%= event.descricao %></td>
+				<td><%= event.descricao %></td>
         <td><%= event.endereco %></td>
 				<td><%= event.data.strftime("%d/%m/%Y às %I:%M") %></td>
-        <td><%= event.imagem %></td>
+				<td><%= link_to image_tag(event.imagem.thumb), event %></td>
 				<td><%= event.user.name %></td>
 				<td><%= link_to 'Ver Detalhes', event %></td>
         <% if event.user == current_user %>
-        <td><%= link_to 'Editar', edit_event_path(event) %></td>
-				<td><%= link_to 'Remover', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+					<td><%= link_to 'Editar', edit_event_path(event) %></td>
+					<td><%= link_to 'Remover', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
       </tr>
     <% end %>
