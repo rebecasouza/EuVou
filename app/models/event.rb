@@ -3,4 +3,6 @@ class Event < ActiveRecord::Base
   include Authority::Abilities
 
 	belongs_to :user
+	
+	mount_uploader :imagem, ImageUploader
 end
