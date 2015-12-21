@@ -27,7 +27,7 @@
 
 <p>
 	<strong>Compartilhar</strong>
-	<%= social_share_button_tag(@event.titulo, :url => "http://localhost:3000/:id", :image => "http://foo.bar/images/a.jpg", desc: "The summary of page", via: "MyTwitterName") %></p>
+	<%= social_share_button_tag(@event.titulo, :url => "https://euvou-teste.herokuapp/events/"+@event.id.to_s, :image => @event.imagem, desc: "The summary of page", :popup => "true") %></p>
 <% if @event.user == current_user %>
 	<%= link_to 'Editar', edit_event_path(@event) %> |
 <% end %>
